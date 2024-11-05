@@ -26,7 +26,7 @@ public class ControlLogic implements IUserInterfaceContract.EventListener {
             int [][] newGridState = gameData.getCopyGridState();
             newGridState[x][y] = input;
 
-            gameData = new SudokuGame(GameLogic.chekForCompletion(newGridState), newGridState);
+            gameData = new SudokuGame(GameLogic.checkForCompletion(newGridState), newGridState);
             storage.updateGameData(gameData);
 
             view.updateSquare(x,y,input);
